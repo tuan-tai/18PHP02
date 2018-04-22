@@ -1,0 +1,16 @@
+body {
+	width: 60%;
+	margin: auto;
+}
+.list p {
+	cursor: pointer;
+	margin-left: 50%;
+	transform: translateX(-50%);
+}
+.details div {
+	text-align: center;
+	display: none;
+}
+.details img {
+	width: 150px;
+}

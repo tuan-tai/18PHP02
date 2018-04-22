@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Avatar</title>
+	<link rel="stylesheet" type="text/css" href="form.css">
+</head>
+<body>
+
+	<form>
+		<div class="container">
+			<p>
+				<span>Name</span> 
+				<input type="text" name="" id="name">
+			</p>
+			<p>
+				<span>Age</span> 
+				<input type="text" name="" id="age">
+			</p>
+			<p>
+				<span>Gender</span> 
+				<input type="radio" name="gender" value="male" checked onclick="change()"> Male
+				<input type="radio" name="gender" value="female" onclick="change()"> Female
+			</p>
+			<p>
+				<input type="button" onclick="change()" value="Submit" class="submit">
+			</p>
+
+			<div id="hobbies">
+				<div id="male">
+					<p>
+						<input type="checkbox" name="hobbies" value="football">Football
+						<input type="checkbox" name="hobbies" value="beer">Beer
+						<input type="checkbox" name="hobbies" value="camping">Camping
+					</p>
+				</div>
+				<div id="female">
+					<p>
+						<input type="checkbox" name="hobbies" value="shopping">Shopping
+						<input type="checkbox" name="hobbies" value="cooking">Cooking
+						<input type="checkbox" name="hobbies" value="talking">Talking
+					</p>
+				</div>
+				<p>
+					<input type="button" name="" value="Submit Hobies" class="submit" onclick="submitHobbies()">
+				</p>
+			</div>
+		</div>
+	</form>
+
+	<div id="avatar">
+		<div class="container">
+			<img src="default_avatar.png" alt="Hinh anh mac dinh" id="result_img">
+			<div id="result"></div>
+			<div id="hobbies_result"></div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="form.js"></script>
+</body>
+</html>
