@@ -2,10 +2,24 @@ body {
 	width: 60%;
 	margin: auto;
 }
+.list {
+	background: lightblue;
+	padding: 10px 0;
+	margin-top: 15px;
+	border: 1px solid grey;
+	border-radius: 5px;
+}
 .list p {
 	cursor: pointer;
 	margin-left: 50%;
 	transform: translateX(-50%);
+}
+.details {
+	background:  lavender;
+	padding:  15px 0;
+	margin-top:  15px;
+	border:  1px solid grey;
+	border-radius: 5px;
 }
 .details div {
 	text-align: center;
