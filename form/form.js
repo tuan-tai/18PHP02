@@ -4,6 +4,7 @@ function change() {
 	var gender = '';
 	var name = document.getElementById('name').value;
 	var age = document.getElementById('age').value;
+	console.log(age);
 	var hobbies = document.getElementsByName('hobbies');
 	var d = new Date();
 	var n = d.getFullYear();
@@ -32,7 +33,7 @@ function change() {
 		document.getElementById('male').style.display = 'none';
 		document.getElementById('result').style.fontSize = '100%';
 
-		if (n - Number(age) > 1997) {
+		if (n - Number(age.value) > 1997) {
 			document.getElementById('result').style.color = 'yellow';
 			document.getElementById('result').style.fontSize = '30px';
 			color = 'yellow';
