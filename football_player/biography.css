@@ -24,6 +24,7 @@ body {
 .details div {
 	text-align: center;
 	display: none;
+	transition: all 5s;
 }
 .details img {
 	width: 150px;
