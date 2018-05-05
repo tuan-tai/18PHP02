@@ -4,18 +4,17 @@ function change() {
 	var gender = '';
 	var name = document.getElementById('name').value;
 	var age = document.getElementById('age').value;
-	console.log(age);
 	var hobbies = document.getElementsByName('hobbies');
 	var d = new Date();
 	var n = d.getFullYear();
 
 	for (var i = 0; i < genderCheck.length; i++) {
-		if (genderCheck[i].checked == true) {
+		if (genderCheck[i].checked) {
 			gender = genderCheck[i].value;
 		}
 	}
-
 	document.getElementById('hobbies').style.display = 'block';
+
 
 	if (gender == 'male') {
 		document.getElementById('result').style.color = 'red';
@@ -33,7 +32,7 @@ function change() {
 		document.getElementById('male').style.display = 'none';
 		document.getElementById('result').style.fontSize = '100%';
 
-		if (n - Number(age.value) > 1997) {
+		if (n - Number(age) > 1997) {
 			document.getElementById('result').style.color = 'yellow';
 			document.getElementById('result').style.fontSize = '30px';
 			color = 'yellow';
@@ -43,10 +42,16 @@ function change() {
 			color = 'blue';
 		}
 	}
+
+	if (age == '') {
+		color = 'blue';
+	}
+
 	document.getElementById('result').innerHTML = name;
 }
 
 function submitHobbies() {
+	console.log(color);
 	var hobbies = document.getElementsByName('hobbies');
 	var hb = '<h3>HOBBIES</h3>';
 	for (var i = 0; i < hobbies.length; i++) {

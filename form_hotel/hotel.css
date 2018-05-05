@@ -1,0 +1,25 @@
+form {
+	width: 600px;
+	margin: auto;
+}
+span {
+	display: inline-block;
+	width: 120px;
+}
+fieldset {
+	margin-left: 50%;
+	transform: translateX(-50%);
+}
+legend {
+	text-align: center;
+}
+form div {
+	margin: 15px 0;
+}
+form div p {
+	color: red;
+}
+#submit {
+	margin-left: 50%;
+	transform: translateX(-50%);
+}

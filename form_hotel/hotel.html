@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hotel Form</title>
+	<link rel="stylesheet" type="text/css" href="hotel.css">
+</head>
+<body>
+	
+	<form>
+		<fieldset>
+			<legend>Hotel Form</legend>
+			<div id="name">
+				<p></p>
+				<span>Ho va ten</span>
+				<input type="text" name="name">
+			</div>
+			<div id="email">
+				<p></p>
+				<span>Email</span>
+				<input type="email" name="email">
+			</div>
+			<div id="phone">
+				<p></p>
+				<span>So dien thoai</span>
+				<input type="number" name="phone">
+			</div>
+			<div id="gender">
+				<p></p>
+				<span>Gioi tinh</span>
+				Nam<input type="radio" name="gender" value="nam">
+				Nu<input type="radio" name="gender" value="nu">
+			</div>
+			<div id="ngaydi">
+				<p></p>
+				<span>Ngay di</span>
+				<input type="date" name="ngaydi">
+			</div>
+			<div id="ngayden">
+				<p></p>
+				<span>Ngay den</span>
+				<input type="date" name="ngayden">
+			</div>
+			<div id="nguoilon">
+				<p></p>
+				<span>So nguoi lon</span>
+				<input type="number" name="nguoilon">
+			</div>
+			<div id="treem">
+				<p></p>
+				<span>So tre em</span>
+				<input type="number" name="treem">
+			</div>
+			<div>
+				<input type="button" name="submit" value="Submit" onclick="validate()" id="submit">
+			</div>
+		</fieldset>
+	</form>
+
+	<script type="text/javascript" src="hotel.js"></script>
+</body>
+</html>
