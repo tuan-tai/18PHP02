@@ -1,0 +1,51 @@
+html, body {
+	padding: 0;
+	margin: 0;
+}
+form, #avatar {
+	width: 460px;
+	margin: auto;
+}
+form {
+	border: 1px solid #79799e;
+	background: lightblue;
+	margin-bottom: 15px;
+	box-shadow: 3px 5px 6px grey;
+	border-radius: 5px;
+}
+.container {
+	display: inline-block;
+	margin-left: 50%;
+	transform: translateX(-50%);
+	padding: 0;
+}
+span {
+	display: inline-block;
+	width: 70px;
+}
+#hobbies {
+	display: none;
+}
+#submitInfo, #submitHobbies {
+	margin-left: 50%;
+	transform: translateX(-50%);
+}
+#avatar {
+	background: #e2baba;
+	border: 1px solid #5f4d4d;
+	padding: 15px 0;
+	box-shadow: 3px 5px 6px grey;
+	border-radius: 5px;
+}
+#result {
+	text-align: center;
+	text-transform: capitalize;
+	font-weight: bold;
+}
+#result_img {
+	width: 150px;
+}
+#hobbies_result {
+	text-align: center;
+	text-transform: capitalize;
+}
