@@ -25,11 +25,16 @@
 .carousel-item {
     float:  left;
     width: 100%;
-    display: none;
+    display: hidden;    
+    transition: all 1s;
+    opacity: 0;
+    height: 0;
 }
 img {
     width:  100%;
 }
 .active {
-    display: block;
+    visibility: visible;
+    height: auto;
+    opacity: 1;
 }
