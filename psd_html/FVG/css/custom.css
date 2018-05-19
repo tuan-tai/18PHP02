@@ -1,0 +1,30 @@
+body, html {
+	margin: 0;
+	padding: 0;
+}
+.curve {
+	width: 30px;
+	display: block;
+}
+.header {
+	height: 586px;
+}
+.intro {
+	margin-bottom: 80px;
+}
+.intro__text {
+	position: relative;
+}
+.intro__img {
+	box-shadow: 15px 20px #eaae4c;
+}
+.products {
+	padding-top: 50px;
+	background: #f8f8f9;
+}
+.products__text {
+	text-align: center;
+}
+.products__img img{
+	width: 100%;
+}
