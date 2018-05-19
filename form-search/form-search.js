@@ -8,11 +8,17 @@ $(document).ready(function(){
 		var word = $("#search-word").val();
 		var count = 0;
 		var index = 0;
-		while (text.indexOf(word, index) != -1) {
-			count++;
-			index = text.indexOf(word, index) + word.length;
+
+		if ($("#result-text").text() == "" || word == "") {
+			return false;
 		}
-		text = text.replace(new RegExp(word, "g"), `<span style="background-color:yellow;">${word}</span>`) + `<br> <b>Tu ${word} xuat hien ${count} lan.</b>`;
-		$("#search-result").html(text);
+		else {
+			while (text.indexOf(word, index) != -1) {
+				count++;
+				index = text.indexOf(word, index) + word.length;
+			}
+			text = text.replace(new RegExp(word, "g"), `<span style="background-color:yellow;">${word}</span>`) + `<br> <b>Từ ${word} xuất hiện ${count} lần.</b>`;
+			$("#search-result").html(text);
+		}	
 	});
 });
