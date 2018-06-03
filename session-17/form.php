@@ -1,8 +1,8 @@
 <?php 
-	$server_name = "tuantai.com";
+	$server_name = "localhost";
 	$username = "root";
 	$password = "root";
-	$dbname = "php02";
+	$dbname = "18php02";
 
 	$conn = new mysqli($server_name, $username, $password, $dbname);
 	if ($conn->connect_error) {
