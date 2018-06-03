@@ -13,6 +13,7 @@
 	// 2. Lấy ra users sử dụng gmail
 	// 3. Lấy ra users có chữ "a" trong tên
 	// 4. Xóa users dùng số điện thoại có đầu 098 và chữ "a" trong tên
+	//5. Lấy ra users có số điện thoại mà số thứ 2 là số 8
 	echo "1.<br>";
 	$sql_1 = "SELECT * FROM users WHERE phone LIKE '098%'";
 	$result_1 = $conn->query($sql_1);
@@ -38,7 +39,7 @@
 	echo "<br>3.<br>";
 	$sql_3 = "SELECT * FROM users WHERE name LIKE '%a%'";
 	$result_3 = $conn->query($sql_3);
-	if ($result_3->num_rows >0) {
+	if ($result_3->num_rows > 0) {
 		while ($row = $result_3->fetch_assoc()) {
 			echo "Name: " . $row["name"] . " - Email: " . $row["email"] . " - Phone: " . $row["phone"] . "<br>";
 		}
@@ -48,12 +49,22 @@
 
 	echo "<br>4.<br>";
 	$sql_4 = "DELETE FROM users WHERE phone LIKE '098%' AND email LIKE '%@gmail%'";
-	$result_4 = $conn->query($sql_4);
-	if ($conn->query($sql_4 === TRUE)) {
-		echo "Record deleted";
+	if ($conn->query($sql_4) === TRUE) {
+		echo "Record deleted<br>";
 	} else {
-		echo "Error deleting: " . $conn->error;
+		echo "Error deleting: " . $conn->error . "<br>";
 	}
-	
+
+	echo "<br>5.<br>";
+	$sql_5 = "SELECT * FROM users WHERE phone LIKE '_8%'";
+	$result_5 = $conn->query($sql_5);
+	if ($result_5->num_rows > 0) {
+		while ($row = $result_5->fetch_assoc()) {
+			echo "Name: " . $row["name"] . " - Email: " . $row["email"] . " - Phone: " . $row["phone"] . "<br>";
+		}
+	} else {
+		echo "No result";
+	}
+
 	$conn->close();
  ?>

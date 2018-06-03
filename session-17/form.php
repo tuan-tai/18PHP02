@@ -10,7 +10,6 @@
 	}
 
 	if ($_POST['name'] != '' && $_POST['email'] != '' && $_POST['phone'] != '') {
-		echo 'ok';
 		$sql = "INSERT INTO users (name, email, phone) VALUES ('".$_POST['name']."','".$_POST['email']."','".$_POST['phone']."')";
 	} else exit ("Information cannot be empty");
 
