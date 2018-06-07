@@ -8,7 +8,8 @@
 		exit ("Connection failed ".$conn->connect_error);
 	}
 
-	$sql = "SELECT name from users INNER JOIN cities ON users.city_id = cities.id WHERE cities.name = 'Đà Nẵng'";
+	$sql = "SELECT * from users INNER JOIN cities ON users.city_id = cities.id WHERE cities.name LIKE 'Da Nang'";
+	$conn->set_charset("utf8");
 	$result = $conn->query($sql);
 	if ($result->num_rows > 0) {
 		while ($row = $result->fetch_assoc()) {
