@@ -17,7 +17,7 @@
 		status boolean
 	)";
 
-	if ($conn->query($sql_categories) === TRUE && $conn->query($sql_products)) {
+	if ($conn->query($sql_categories) === TRUE && $conn->query($sql_products) === TRUE) {
 		echo "Tables created successfully";
 	} else {
 		echo "Error creating table: " . $conn->error;

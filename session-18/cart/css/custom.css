@@ -1,0 +1,86 @@
+.index__wrapper {
+    width: 300px;
+    margin: auto;
+}
+
+
+
+
+
+/*Categories List*/
+
+#catList_wrapper {
+    width: 300px !important;
+    margin: auto !important;
+}
+
+#catList {
+    width: 300px !important;
+    margin: auto;
+}
+
+#catList caption {
+    margin-bottom: 15px;
+}
+
+#catList td {
+    padding-left: 10px;
+    height: 55px;
+}
+
+#catList td:first-child {
+    width: 20px;
+}
+
+#catList td:nth-child(2) {
+    width: 170px;
+}
+
+#catList td:nth-child(2) input {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#catList td:nth-child(2) .save {
+    width: 50px;
+}
+
+.catListEdit {
+    cursor: pointer;
+    display: inline-block;
+}
+
+.catListEdit:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+
+/**/
+
+
+/*Product add*/
+
+#productAdd {
+    width: 300px;
+    margin: auto;
+}
+
+#productAdd legend {
+    text-align: center;
+}
+
+#productAdd .form-group input {
+    width: 100%;
+}
+
+#productAdd .submit {
+    text-align: center;
+}
+
+#productAdd .form-group p input {
+    width: auto;
+}
+
+
+/*End products list*/
