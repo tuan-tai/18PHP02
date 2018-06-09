@@ -18,7 +18,7 @@
         <tr>
             <th>ID</th>
             <th>Name</th>
-            <th>Action</th>
+            <th colspan="2">Action</th>
         </tr>
         </thead>
         <tbody>
@@ -32,7 +32,8 @@
                     while($row=$result->fetch_assoc()) {
                         echo "<tr>";
                         echo "<td> " . $row["id"]. "</td><td class='C" . $row["id"] . "'>" . $row["name"] . "</td>";
-                        echo "<td><p class='catListEdit' id=C" . $row["id"] ." ><i class='far fa-edit'></i> Edit</p>";
+                        echo "<td><p class='catListEdit' id=C" . $row["id"] ." ><i class='far fa-edit'></i> Edit</p></td>";
+                        echo "<td class='catListDelete'><i class='far fa-trash-alt mr-1'></i>Delete</td>";
                         echo "</tr>";
                     }
                 }

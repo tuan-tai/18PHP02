@@ -15,7 +15,7 @@
 }
 
 #catList {
-    width: 300px !important;
+    width: 459px !important;
     margin: auto;
 }
 
@@ -41,20 +41,19 @@
     margin-bottom: 5px;
 }
 
-#catList td:nth-child(2) .save {
-    width: 50px;
+#catList td:nth-child(3) {
+	width: 80px;
 }
 
-.catListEdit {
+.catListEdit, .catListDelete {
     cursor: pointer;
     display: inline-block;
 }
 
-.catListEdit:hover {
+.catListEdit:hover, .catListDelete:hover {
     color: blue;
     text-decoration: underline;
 }
-
 
 /**/
 
