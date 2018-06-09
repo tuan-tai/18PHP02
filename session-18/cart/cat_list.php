@@ -34,7 +34,7 @@
                         echo "<tr>";
                         echo "<td> " . $row["id"]. "</td><td class='C" . $row["id"] . "'>" . $row["name"] . "</td>";
                         echo "<td><p class='catListEdit' id=C" . $row["id"] ." ><i class='far fa-edit'></i> Edit</p></td>";
-                        echo "<td><i class='far fa-trash-alt mr-1'></i>Delete</td>";
+                        echo "<td><p class='catListDelete'><i class='far fa-trash-alt mr-1'></i>Delete</p></td>";
                         echo "</tr>";
                     }
                 }
