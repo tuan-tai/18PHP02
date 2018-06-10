@@ -59,7 +59,12 @@
 
 
 /*Product add*/
-
+.productImage {
+    width: 20px;
+}
+.productImage img {
+    width: 100%;
+}
 #productAdd {
     width: 300px;
     margin: auto;
@@ -80,7 +85,9 @@
 #productAdd .form-group p input {
     width: auto;
 }
-
+.productUpdated {
+    overflow: scroll;
+}
 
 
 

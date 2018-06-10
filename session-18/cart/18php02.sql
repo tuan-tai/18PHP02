@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 09, 2018 at 08:17 AM
+-- Generation Time: Jun 10, 2018 at 07:55 AM
 -- Server version: 5.6.37
--- PHP Version: 5.6.31
+-- PHP Version: 7.1.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -28,19 +28,20 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `categories` (
   `id` int(10) unsigned NOT NULL,
+  `parent_id` int(10) unsigned DEFAULT NULL,
   `name` varchar(255) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `categories`
 --
 
-INSERT INTO `categories` (`id`, `name`) VALUES
-(1, 'iPad'),
-(2, 'iPhone'),
-(3, 'iPod'),
-(4, 'MacBook'),
-(5, 'Others');
+INSERT INTO `categories` (`id`, `parent_id`, `name`) VALUES
+(3, NULL, 'iPhone'),
+(6, NULL, 'iPad'),
+(11, NULL, 'iPod'),
+(12, NULL, 'MacBook'),
+(13, NULL, 'Others');
 
 -- --------------------------------------------------------
 
@@ -50,14 +51,23 @@ INSERT INTO `categories` (`id`, `name`) VALUES
 
 CREATE TABLE IF NOT EXISTS `products` (
   `id` int(10) unsigned NOT NULL,
+  `cat_id` int(10) unsigned NOT NULL,
   `image` varchar(255) DEFAULT NULL,
   `name` varchar(255) NOT NULL,
-  `cat_id` int(10) unsigned NOT NULL,
   `model` varchar(255) NOT NULL,
-  `prices` varchar(255) NOT NULL,
-  `quantity` varchar(255) NOT NULL,
-  `status` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `price` int(10) unsigned NOT NULL,
+  `quantity` int(10) unsigned NOT NULL,
+  `status` tinyint(1) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `updated` datetime DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=1004 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`id`, `cat_id`, `image`, `name`, `model`, `price`, `quantity`, `status`, `created`, `updated`) VALUES
+(1003, 3, 'Screen Shot 2018-06-08 at 10.29.46 PM.png', 'wfe', 'ewr3', 213, 123, 1, '2018-06-10 14:50:45', NULL);
 
 --
 -- Indexes for dumped tables
@@ -85,12 +95,12 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1004;
 --
 -- Constraints for dumped tables
 --

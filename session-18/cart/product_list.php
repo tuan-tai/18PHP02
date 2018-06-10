@@ -40,7 +40,7 @@
                     <?php echo $i ?>
                     <span class="d-none id"><?php echo $row['id'] ?></span>
                 </td>
-                <td class="productImage"><?php echo $row['image'] ?></td>
+                <td class="productImage"><img src="uploads/<?php echo $row['image'] ?>" alt="<?php echo $row['image'] ?>"></td>
                 <td class="productName"><?php echo $row['name'] ?></td>
                 <td class="productCat">
                     <?php
@@ -56,7 +56,7 @@
                 <td class="productQuantity"><?php echo $row['quantity'] ?></td>
                 <td class="productStatus"><?php echo $row['status'] ?></td>
                 <td class="productCreated"><?php echo $row['created'] ?></td>
-                <td class="productUpdated"><?php echo $row['updated'] ?></td>
+                <td class="productUpdated"><?php echo $row['created'] ?></td>
                 <td><a href="product_edit.php?id=<?php echo $row['id'] ?>" class="productEdit"><i class='far fa-edit mr-1'></i>Edit</a></td>
                 <td><a href="product_delete.php?id=<?php echo $row['id']; ?>" class="productDelete"><i class='far fa-trash-alt mr-1'></i>Delete</a></td>
             </tr>
