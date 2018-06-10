@@ -1,54 +1,60 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Category List</title>
-    <meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="fontawesome/css/fontawesome-all.min.css">
-    <link rel="stylesheet" type="text/css" href="DataTables/datatables.css">
-    <link rel="stylesheet" type="text/css" href="css/custom.css">
-    <style type="text/css">
-        
-</style>
-</head>
-<body>
-    <h1 class="text-center text-capitalize">Categories list</h1>
-    <table id="catList" class="display cell-border hover table table-bordered">
+<?php require "layout_header.php" ?>
+    <h1 class="text-center text-capitalize">
+        Categories list
+    </h1>     
+    <div class="title mb-3">
+        <a href="cat_add.php" class="btn btn-primary catAdd">Add</a>
+        <a href="product_list.php" class="btn btn-primary">Products page</a>
+    </div>
+
+    <form class="formCatAdd mb-3" id="formCatAdd" action="cat_add.php" method="post">
+        <div class="form-group">
+            <input class="form-control" type="text" name="name" placeholder="New Category Name"/>
+        </div>
+        <input type="submit" name="submit" form="formCatAdd" class="btn btn-primary" value="Add"/>
+    </form>
+
+    <table id="catList" class="table table-hover table-bordered">
         <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th></th>
-            <th></th>
-        </tr>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th></th>
+                <th></th>
+            </tr>
         </thead>
         <tbody>
-                <?php  
-                require "db_connect.php";
+            <?php 
+            require "db_connect.php";
 
-                $sql="SELECT * FROM categories";
-                $result=$conn->query($sql);
+            $sql="SELECT * FROM categories";
+            $result=$conn->query($sql);
 
-                if ($result->num_rows > 0) {
-                    while($row=$result->fetch_assoc()) {
-                        echo "<tr>";
-                        echo "<td> " . $row["id"]. "</td><td class='C" . $row["id"] . "'>" . $row["name"] . "</td>";
-                        echo "<td><p class='catListEdit' id=C" . $row["id"] ." ><i class='far fa-edit'></i> Edit</p></td>";
-                        echo "<td><p class='catListDelete'><i class='far fa-trash-alt mr-1'></i>Delete</p></td>";
-                        echo "</tr>";
-                    }
+            $i = 1; 
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+            ?>
+            <tr>
+                <td class="catID">
+                    <?php echo $i ?>
+                    <span class="d-none id"><?php echo $row['id'] ?></span>
+                </td>
+                <td class="catName"><?php echo $row['name'] ?></td>
+                <td><a href="cat_edit.php?id=<?php echo $row['id'] ?>" class="catEdit"><i class='far fa-edit mr-1'></i>Edit</a></td>
+                <td><a href="cat_delete.php?id=<?php echo $row['id']; ?>" class="catDelete"><i class='far fa-trash-alt mr-1'></i>Delete</a></td>
+            </tr>
+            <?php  
+                    $i++;
                 }
-                else {
-                    echo "0 results";
-                }
-                
-                $conn->close();
-                ?>
+            }
+            else {
+                echo "0 results";
+            }
+
+            $conn->close();             
+            ?>
         </tbody>
     </table>
-    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="DataTables/datatables.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/custom.js"></script>
-</body>
-</html>
+    <h4 class="alert-danger text-center"></h4>
+    <h4 class="alert-success text-center"></h4>
+<?php require "layout_footer.php" ?>

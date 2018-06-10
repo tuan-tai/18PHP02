@@ -1,16 +1,16 @@
 <?php 
 	require "db_connect.php";
 	if (isset($_POST['submit'])) {
+		$checkValidate = true;
 		if (empty($_POST['name'])) {
-			echo 'Category name cannot be empty!';
+			$checkValidate = false;
 		} else {
-			if ($conn->query("INSERT INTO categories (name) VALUES ('" . $_POST['name'] ."')") === TRUE) {
-				echo "Category added successfully";
-			} else {
-				echo "Error " . $conn->error;
-			}
+			$checkValidate = true;
+			$sql = "INSERT INTO categories (name) VALUES ('" . $_POST['name'] . "')";
 		}
-	} else {
-		echo 'Not available';
+		if ($checkValidate) {
+			$conn->query($sql);
+		}
+		header("Location: cat_list.php");
 	}
  ?>

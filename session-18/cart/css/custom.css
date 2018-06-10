@@ -5,22 +5,18 @@
 
 
 
-
-
 /*Categories List*/
 
-#catList_wrapper {
-    width: 300px !important;
-    margin: auto !important;
-}
-
-#catList {
-    width: 459px !important;
+.formCatAdd {
+    display: none;
+    text-align: center;
+    width: 450px;
     margin: auto;
 }
 
-#catList caption {
-    margin-bottom: 15px;
+#catList {
+    width: 450px;
+    margin: auto;
 }
 
 #catList td {
@@ -28,32 +24,36 @@
     height: 55px;
 }
 
-#catList td:first-child {
+#catList .catID {
     width: 20px;
-}
-
-#catList td:nth-child(2) {
-    width: 170px;
-}
-
-#catList td:nth-child(2) input {
-    display: block;
-    margin-bottom: 5px;
+    text-align: center;
 }
 
 #catList td:nth-child(3) {
-	width: 80px;
+    width: 100px;
+    text-align: center;
 }
 
-.catListEdit, .catListDelete {
+#catList td:nth-child(4) {
+    width: 100px;
+    text-align: center;
+}
+
+.catEdit,
+.catDelete {
+    color: black;
     cursor: pointer;
     display: inline-block;
 }
 
-.catListEdit:hover, .catListDelete:hover {
+.catListEdit:hover,
+.catListDelete:hover {
     color: blue;
     text-decoration: underline;
 }
+
+
+
 
 /**/
 
@@ -80,6 +80,9 @@
 #productAdd .form-group p input {
     width: auto;
 }
+
+
+
 
 
 /*End products list*/

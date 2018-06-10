@@ -1,38 +1,58 @@
-<!DOCTYPE html>
-<html>
+<?php require "layout_header.php" ?>
+<?php date_default_timezone_set('Asia/Ho_Chi_Minh'); ?>
 
-<head>
-    <title>Category Add</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/custom.css">
-    <style type="text/css">
-
-    </style>
-</head>
-
-<body>
-    <form id="productAdd" method="post" action="product_check.php">
-        <h1 class="text-center">Product Add</h1>
+    <form id="productAdd" method="post" action="product_add.php">
+        <h1 class="text-center">Product add</h1>
         <div class="form-group">
-            <label>Product Name</label>
-            <input type="text" class="form-control" required>
+            <label>Product name</label>
+            <input class="form-control" type="text" name="productName" required>
         </div>
         <div class="form-group">
-            <label>Category Name</label>
+            <label>Category name</label>
             <select class="form-control" name="catId">
                 <?php 
-					require "get_cat.php";
-					foreach ($return as $cat) {
-						echo "<option>" . $cat['name'] . "</option>";
-					}
+                    require "get_cat.php";
+                    foreach ($return as $cat) {
+                        echo "<option>" . $cat['name'] . "</option>";
+                    }
                  ?>
             </select>
         </div>
+        <div class="form-group">
+            <label>Product image</label>
+            <input class="form-control-file" type="file" name="productImage">
+        </div>
+        <div class="form-group">
+            <label>Product model</label>
+            <input class="form-control" type="text" name="productModel">
+        </div>
+        <div class="form-group">
+            <label>Product price</label>
+            <input class="form-control" type="number" name="productPrice">
+        </div>
+        <div class="form-group">
+            <label>Product quantity</label>
+            <input class="form-control" type="number" name="productQuantity">
+        </div>
+        <div class="form-group">
+            <label>Product status</label>
+            <select class="form-control" name="productStatus">
+                <option value="0">Not available</option>
+                <option value="1">Available</option>
+            </select>
+        </div>
+        <input type="hidden" name="productCreated" value="<?php echo date('Y-m-d H:i:s') ?>">
         <button type="submit" form="productAdd" class="btn btn-primary">Submit</button>
     </form>
-</body>
 
-</html>
+<?php require "layout_footer.php" ?>
+<?php 
+    require "db_connect.php";
+    if (isset($_POST)) {
+        if (!empty($_POST['cat_id']) &&  !empty($_POST['productImage']) &&  !empty($_POST['productName']) &&  !empty($_POST['productModel']) &&  !empty($_POST['productPrice']) &&  !empty($_POST['productQuantity']) &&  !empty($_POST['productStatus']) &&  !empty($_POST['productCreated'])) {
+            $sql = "INSERT INTO products(cat_id, image, name, model, price, quantity, status, created) VALUES
+                    (" . $_POST['cat_id'] . ", '" .$_POST['productImage'] . "', '" . $_POST['productName'] . "', '" . $_POST['productModel'] . "', " . $_POST['productPrice'] . ", " . $_POST['productQuantity'] . ", " . $_POST['productStatus'] . ", " . $_POST['productCreated'] . ")";
+        echo $sql;
+    }
+    }
+ ?>
