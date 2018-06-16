@@ -1,4 +1,8 @@
+<?php require "session.php" ?>
 <?php require "layout_header.php" ?>
+<?php
+if (!empty($_SESSION['email'])) { ?>
+    <h4 class="text-center alert alert-success">Hello <?php echo $_SESSION['email'] ?> <a href="user_log_out.php" class="btn btn-primary">Log out</a></h4>
     <h1 class="text-center text-capitalize">
         Categories list
     </h1>     
@@ -57,4 +61,15 @@
     </table>
     <h4 class="alert-danger text-center"></h4>
     <h4 class="alert-success text-center"></h4>
+<?php 
+} else {
+    echo "
+    <div class=\"s-w-300 mx-auto mt-5\">
+        <div class=\"alert alert-warning text-center\"><i class=\"fas fa-exclamation-triangle mr-1\"></i>You are not logged in</div>
+        <div class=\"text-center\">
+            <a href=\"user_register.php\" class=\"btn btn-primary\">Sign up</a> <span class=\"text-primary\">OR</span> <a href=\"user_sign_in.php\" class=\"btn btn-primary\">Log in</a>
+        </div>
+    </div>";
+} 
+?>
 <?php require "layout_footer.php" ?>

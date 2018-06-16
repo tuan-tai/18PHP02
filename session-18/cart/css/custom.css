@@ -2,11 +2,14 @@
     width: 300px;
     margin: auto;
 }
-
-
-
+.s-w-300 {
+    width: 300px;
+}
 /*Categories List*/
 
+.title {
+    text-align: right;
+}
 .formCatAdd {
     display: none;
     text-align: center;
@@ -55,41 +58,40 @@
 
 
 
+
+
 /**/
 
 
 /*Product add*/
+
 .productImage {
     width: 20px;
 }
+
 .productImage img {
     width: 100%;
 }
+
 #productAdd {
     width: 300px;
     margin: auto;
 }
 
-#productAdd legend {
-    text-align: center;
-}
-
-#productAdd .form-group input {
-    width: 100%;
-}
-
-#productAdd .submit {
-    text-align: center;
-}
-
-#productAdd .form-group p input {
-    width: auto;
-}
 .productUpdated {
     overflow: scroll;
 }
 
-
-
+#productAdd .form-group .alert-danger {
+    margin-top: 5px;
+    border: 1px solid #ced4da;
+}
 
 /*End products list*/
+
+/*Register form*/
+#userRegisterForm {
+    width: 300px;
+    margin: auto;
+}
+/*End register form*/

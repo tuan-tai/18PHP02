@@ -1,0 +1,1 @@
+<h4 class="text-center alert alert-success">Welcome <?php echo $_SESSION['email'] ?> <a href="user_log_out.php" class="ml-1 btn btn-primary">Log out</a></h4>

@@ -19,6 +19,14 @@
 		created datetime,
 		updated datetime
 	)";
+	$sql_users = "CREATE TABLE users (
+		id int unsigned auto_increment primary key,
+		name varchar(255),
+		email varchar(255) unique,
+		password varchar(255),
+		priority tinyint unsigned
+	)";
+
 
 	if ($conn->query($sql_categories) === TRUE && $conn->query($sql_products) === TRUE) {
 		echo "Tables created successfully";
