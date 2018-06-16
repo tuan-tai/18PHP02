@@ -39,14 +39,14 @@
 	        <label>Name</label>
 	        <input type="text" class="form-control" name="name" value="<?php echo $row['name'] ?>">
 	    </div>
-	    <button type="submit" class="btn btn-primary" form="userRegisterForm">Submit</button>
+	    <button type="submit" name="submit" class="btn btn-primary" form="userRegisterForm">Submit</button>
 	</form>
 <?php 
 		}
 	}
  ?>
 <?php 
-	if (isset($_POST)) {
+	if (isset($_POST['submit'])) {
 		if ($checkValidate == true) {
 			$sql = "UPDATE users SET
 						name = \"".$_POST['name']."\", 
