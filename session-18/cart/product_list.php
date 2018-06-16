@@ -81,7 +81,12 @@
                 <?php
                 if (!empty($_SESSION['email'])) {
                 ?>
-                    <td><a href="product_add_cart.php?id=<?php echo $row['id']; ?>"><i class="fas fa-cart-plus"></i>Add</a></td>
+                    <td><!-- <a href="product_add_cart.php?id=<?php echo $row['id']; ?>"><i class="fas fa-cart-plus"></i>Add</a> -->
+                        <form id="A<?php echo $row['id']; ?>" method="post" action="product_add_cart.php?id=<?php echo $row['id']; ?>">
+                            <input type="number" name="quantity" value="1" min="1" class="text-center" style="border: 1px solid grey; width: 40px; height: 100%;">
+                            <button form="A<?php echo $row['id']; ?>" class="btn btn-primary">Add</button>
+                        </form>
+                    </td>
                 <?php
                 }
                 ?>
