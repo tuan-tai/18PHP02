@@ -33,7 +33,7 @@
 	        <label>Name</label>
 	        <input type="text" class="form-control" name="name">
 	    </div>
-	    <button type="submit" name="submits" class="btn btn-primary" form="userRegisterForm">Submit</button>
+	    <button type="submit" name="submit" class="btn btn-primary" form="userRegisterForm">Submit</button>
 	</form>
 <?php require "layout_footer.php" ?>
 
