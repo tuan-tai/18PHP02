@@ -1,7 +1,7 @@
 <?php 
 require "session.php";
-$id = $_GET['id'];
 if (!empty($_SESSION['email'])) {
-	
+	$id = $_GET['id'];
+	require "db_connect.php";
 }
 ?>

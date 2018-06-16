@@ -9,6 +9,7 @@ if (!empty($_SESSION['email'])) { ?>
     <div class="title mb-3">
         <a href="cat_add.php" class="btn btn-primary catAdd">Add</a>
         <a href="product_list.php" class="btn btn-primary">Products page</a>
+        <a href="user_list.php" class="btn btn-primary">Users page</a>
     </div>
 
     <form class="formCatAdd mb-3" id="formCatAdd" action="cat_add.php" method="post">

@@ -12,6 +12,7 @@
     <div class="text-right mb-3">
         <a href="product_add.php" class="btn btn-primary">Add</a>
         <a href="cat_list.php" class="btn btn-primary">Categories page</a>
+        <a href="user_list.php" class="btn btn-primary">Users page</a>
         <?php if (empty($_SESSION['email'])) { ?>
             <a href="cat_list.php" class="btn btn-primary">Log in</a>
         <?php } ?>

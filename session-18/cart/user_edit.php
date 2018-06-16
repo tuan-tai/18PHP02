@@ -6,6 +6,8 @@
 	$id = $_GET['id'];
 	$sql = "SELECT * FROM users WHERE id = ".$id;
 	$result = $conn->query($sql);
+	if ($result->num_rows > 0) {
+    	while ($row = $result->fetch_assoc()) {
 ?>
 <?php $checkValidate = true; ?>
 	<form id="userRegisterForm" class="s-w-300 m-auto" method="post" action="user_edit.php?id=<?php echo $id ?>.php">
@@ -15,7 +17,7 @@
 		</div>
 	    <div class="form-group">
 	        <label>Email address<sup> *</sup></label>
-	        <input type="email" class="form-control" name="email">
+	        <input type="email" class="form-control" name="email" value="<?php echo $row['email'] ?>">
 	        <?php 
 	        if (isset($_POST['email']) && empty($_POST['email'])) {
 	            $checkValidate = false;
@@ -25,7 +27,7 @@
 	    </div>
 	    <div class="form-group">
 	        <label>Password <sup>*</sup></label>
-	        <input type="password" class="form-control" name="password">
+	        <input type="password" class="form-control" name="password" value="<?php echo $row['password'] ?>">
 	        <?php 
 	        if (isset($_POST['email']) && empty($_POST['password'])) {
 	            $checkValidate = false;
@@ -35,11 +37,14 @@
 	    </div>
 	    <div class="form-group">
 	        <label>Name</label>
-	        <input type="text" class="form-control" name="name">
+	        <input type="text" class="form-control" name="name" value="<?php echo $row['name'] ?>">
 	    </div>
 	    <button type="submit" class="btn btn-primary" form="userRegisterForm">Submit</button>
 	</form>
-
+<?php 
+		}
+	}
+ ?>
 <?php 
 	if (isset($_POST)) {
 		if ($checkValidate == true) {
