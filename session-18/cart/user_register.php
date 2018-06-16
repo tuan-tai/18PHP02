@@ -50,7 +50,6 @@
 			$conn->close();
 		}
 	} else {
-		echo "Error";
 		$conn->close();
 	}
  ?>
