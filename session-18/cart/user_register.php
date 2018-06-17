@@ -45,8 +45,9 @@
 						('" . $_POST['name'] . "', '" . $_POST['email'] ."',
 						 '" . $_POST['password'] ."')";
 			// echo $sql; exit();
-			$conn->query($sql);
-			header("Location: user_list.php");
+			if ($conn->query($sql) === TRUE) {
+				header("Location: user_list.php");
+			}
 			$conn->close();
 		}
 	} else {
