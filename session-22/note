@@ -1,0 +1,4 @@
+"SELECT * FROM users WHERE username == '$username' AND password == '$password'";
+1. Nghiên cứu OOP, từng tính chất, và ví dụ. Mai hỏi mỗi người mỗi tínt chất + 1 ví dụ
+2. Nghiên cứu MVC
+3. List sản phẩm ra và mua hàng, cho vào giỏ hàng và tăng giảm số lượng sản phẩm mua.
