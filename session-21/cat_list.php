@@ -6,6 +6,7 @@
         <?php require "header.php" ?>
         
         <!-- Left side column. contains the logo and sidebar -->
+        <?php $activeAside = 1; ?>
         <?php require "aside.php" ?>
 
         <!-- Content Wrapper. Contains page content -->
@@ -62,8 +63,8 @@
                                 <?php echo $i ?>
                             </td>
                             <td class="catName"><?php echo $row['name'] ?></td>
-                            <td><a href="cat_edit.php?id=<?php echo $row['id'] ?>" class="catEdit"><i class='far fa-edit mr-1'></i>Edit</a></td>
-                            <td><a href="cat_delete.php?id=<?php echo $row['id']; ?>" class="catDelete"><i class='far fa-trash-alt mr-1'></i>Delete</a></td>
+                            <td><a href="cat_edit.php?id=<?php echo $row['id'] ?>" class="catEdit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a></td>
+                            <td><a href="cat_delete.php?id=<?php echo $row['id']; ?>" class="catDelete"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a></td>
                         </tr>
                         <?php
                         $i++;

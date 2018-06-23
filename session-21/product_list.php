@@ -6,6 +6,7 @@
         <?php require "header.php" ?>
         
         <!-- Left side column. contains the logo and sidebar -->
+        <?php $activeAside = 2; ?>
         <?php require "aside.php" ?>
 
         <!-- Content Wrapper. Contains page content -->
@@ -94,7 +95,7 @@
                             <td class="productStatus"><?php echo $row['status'] ?></td>
                             <td class="productCreated"><?php echo $row['created'] ?></td>
                             <td class="productUpdated"><?php echo $row['updated'] ?></td>
-                            <td><a href="product_edit.php?id=<?php echo $row['id'] ?>" class="productEdit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></i> Edit</a></td>
+                            <td><a href="product_edit.php?id=<?php echo $row['id'] ?>" class="productEdit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a></td>
                             <td><a href="product_delete.php?id=<?php echo $row['id']; ?>" class="productDelete"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a></td>
                         </tr>
                         <?php

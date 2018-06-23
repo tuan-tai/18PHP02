@@ -27,7 +27,7 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
-            <li class="active treeview">
+            <li class="<?php if ($activeAside == 1) {echo 'active';} ?> treeview">
                 <a href="cat_list.php">
                     <i class="fa fa-files-o"></i>
                     <span>Categories</span>
@@ -39,7 +39,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="treeview">
+            <li class="<?php if ($activeAside == 2) {echo 'active';} ?> treeview">
                 <a href="product_list.php">
                     <i class="fa fa-files-o"></i>
                     <span>Products</span>

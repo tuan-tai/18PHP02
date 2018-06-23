@@ -5,6 +5,7 @@
         <?php require "header.php" ?>
         
         <!-- Left side column. contains the logo and sidebar -->
+        <?php $activeAside = 1; ?>
         <?php require "aside.php" ?>
 
         <!-- Content Wrapper. Contains page content -->
