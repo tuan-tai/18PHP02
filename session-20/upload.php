@@ -11,7 +11,7 @@
 		<form id="test1" action="upload.php" method="post" enctype="multipart/form-data">
 			<h1>Form 1</h1>
 			Select file to upload:
-			<input type="text" name="value">			
+			<input type="text" name="value">
 			<input type="submit" name="submit" value="Submit"  />
 		</form>
 		<form id="test2" method="post" action="upload.php">
@@ -20,9 +20,16 @@
 			<input type="submit" name="">
 		</form>
 		<script type="text/javascript"></script>
+
 	</body>
 </html>
-<?php 
-	$target_dir = "uploads/";
-	var_dump($_POST['value']);
- ?>
+
+<?php
+$target_dir = "uploads/";
+var_dump($_POST['value']);
+if (i == 1) {
+
+    echo 'ok';
+
+}
+?>
