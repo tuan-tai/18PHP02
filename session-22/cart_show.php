@@ -27,9 +27,12 @@
             <section class="custom__content">
                 <h1 class="text-center text-capitalize">Cart list</h1>
                 <div class="text-right mb-3">
-                    <a href="product_add.php" class="btn btn-primary">Add</a>
                     <a href="cat_list.php" class="btn btn-primary">Categories page</a>
-                    <a href="user_list.php" class="btn btn-primary">Users page</a>
+                    <?php
+                        if (!empty($_SESSION)) {
+                            echo "<a href=\"cart_show.php\">Cart</a>";
+                        }
+                    ?>
                 </div>
                 <table id="" class="table table-hover table-bordered">
                     <thead>
