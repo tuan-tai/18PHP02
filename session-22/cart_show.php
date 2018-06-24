@@ -28,11 +28,6 @@
                 <h1 class="text-center text-capitalize">Cart list</h1>
                 <div class="text-right mb-3">
                     <a href="cat_list.php" class="btn btn-primary">Categories page</a>
-                    <?php
-                        if (!empty($_SESSION)) {
-                            echo "<a href=\"cart_show.php\">Cart</a>";
-                        }
-                    ?>
                 </div>
                 <table id="" class="table table-hover table-bordered">
                     <thead>

@@ -1,6 +1,0 @@
-Tính đóng gói
-Tính đóng gói (encapsulation) "đóng gói" thuộc tính và phương thức của đối tượng (hoặc lớp) thông qua việc giới hạn quyền truy cập (hoặc thay đổi) giá trị của thuộc tính hoặc quyền gọi phương thức. Nói cách khác tính đóng gói cho phép kiểm soát quyền truy cập (và thay đổi) giá trị của thuộc tính hoặc quyền gọi phương thức của đối tượng (hoặc lớp) và đối tượng (hoặc lớp) con.
-Trong PHP việc đóng gói được thực hiện nhờ sử dụng các từ khoá public, private và protected:
-public: Cho phép truy cập (và thay đổi giá trị) của thuộc tính và phương thức ở mọi phạm vi, có thể hiểu là mang đặc tính cộng đồng.
-protected: Chỉ cho phép truy cập (hay thay đổi) giá trị của thuộc tính và phương thức ở phạm vi của đối tượng con (hoặc lớp con), có thể hiểu là mang đặc tính dòng họ.
-private: Chỉ cho phép truy cập (hay thay đổi) giá trị của thuộc tính và phương thức ở phạm vi của đối tượng (hoặc lớp), có thể hiểu là mang đặc tính gia đình.
