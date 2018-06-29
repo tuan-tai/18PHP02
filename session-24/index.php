@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+require("config/db__connect.php");
+require("functions/getList.php");
+$cats = get('config/db__connect.php', '*', 'categories');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +15,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Shop Homepage - Start Bootstrap Template</title>
+  <title>Tony Shop</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -20,6 +27,8 @@
   <!-- Custom styles for this template -->
   <link href="css/shop-homepage.css" rel="stylesheet">
 
+  <!-- Icon-->
+  <link rel="icon" href="images/favicon.png">
 </head>
 
 <body>
@@ -27,7 +36,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Start Bootstrap</a>
+      <a class="navbar-brand" href="#">Tony Computer</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
         aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -60,11 +69,15 @@
 
       <div class="col-lg-3">
 
-        <h1 class="my-4">Shop Name</h1>
+        <h3 class="my-4">Categories List</h3>
         <div class="list-group">
-          <a href="#" class="list-group-item">Category 1</a>
-          <a href="#" class="list-group-item">Category 2</a>
-          <a href="#" class="list-group-item">Category 3</a>
+          <?php
+            if (count($cats) > 0) {
+              foreach ($cats as $cat) {
+                echo "<a href=\"#\" class=\"list-group-item\">" . $cat['name'] . "</a>";
+              }
+            }
+          ?>
         </div>
 
       </div>

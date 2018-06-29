@@ -1,7 +1,7 @@
 <?php
-require "../config/db__connect.php";
-function get($item, $from)
+function get($db, $item, $from)
 {
+    require $db;
     $sql = "SELECT $item from $from";
     $result = $conn->query($sql);
     $result1 = array();
