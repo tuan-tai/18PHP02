@@ -1,8 +1,7 @@
 <?php
-function get($db, $item, $from)
+function set($db, $sql)
 {
     require $db;
-    $sql = "SELECT $item from $from";
     $result = $conn->query($sql);
     $result1 = array();
     if ($result->num_rows > 0) {
@@ -13,4 +12,5 @@ function get($db, $item, $from)
     }
     return $result1;
 }
+
 ?>

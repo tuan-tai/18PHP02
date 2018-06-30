@@ -1,9 +1,3 @@
-/*!
- * Start Bootstrap - Shop Homepage (https://startbootstrap.com/template-overviews/shop-homepage)
- * Copyright 2013-2017 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-shop-homepage/blob/master/LICENSE)
- */
-
 body {
   padding-top: 54px;
 }
@@ -13,3 +7,64 @@ body {
     padding-top: 56px;
   }
 }
+
+.s-h-350 {
+  height: 350px;
+}
+
+/* Slide */
+
+.owl-carousel {
+  position: relative;
+}
+
+.owl-carousel .owl-prev,
+.owl-carousel .owl-next {
+  position: absolute;
+  top: 50%;
+  font-size: 50px !important;
+}
+
+.owl-carousel .owl-prev {
+  left: 0;
+}
+
+.owl-carousel .owl-next {
+  right: 0;
+}
+
+/* Sign in */
+
+.signInSection {
+  min-height: 525px;
+}
+
+.signIn {
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+}
+
+.signIn .nav.nav-fill .nav-item a {
+  border: 1px solid #dee2e6;
+  color: #707070;
+  position: relative;
+}
+
+.signIn .nav.nav-fill .nav-item a:hover,
+.signIn .nav.nav-fill .nav-item a.active {
+  color: black;
+}
+
+.signIn .nav.nav-fill .nav-item a:hover:after,
+.signIn .nav.nav-fill .nav-item a.active:after {
+  content: "";
+  display: block;
+  width: 100%;
+  border-bottom: 3px solid #343a40;
+  color: black;
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
+.signIn .tab-content {}
