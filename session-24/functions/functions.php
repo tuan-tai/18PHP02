@@ -1,5 +1,5 @@
 <?php
-function set($db, $sql)
+function select($db, $sql)
 {
     require $db;
     $result = $conn->query($sql);
@@ -10,7 +10,18 @@ function set($db, $sql)
             array_push($result1, $row);
         }
     }
+    $conn->close();
     return $result1;
 }
 
+function insert($db, $sql)
+{
+    require $db;
+    if ($conn->query($sql) === TRUE) {
+        return "New record created successfully";
+    } else {
+        return "Error: " . $sql . "<br>" . $conn->error;
+    }
+    $conn->close();
+}
 ?>

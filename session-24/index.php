@@ -3,8 +3,8 @@ session_start();
 
 require("config/db__connect.php");
 require("functions/functions.php");
-$cats = set('config/db__connect.php', 'SELECT * FROM categories');
-$products = set('config/db__connect.php', 'SELECT * FROM products');
+$cats = select('config/db__connect.php', 'SELECT * FROM categories');
+$products = select('config/db__connect.php', 'SELECT * FROM products');
 ?>
 
 <?php
