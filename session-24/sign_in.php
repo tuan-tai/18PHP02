@@ -1,12 +1,47 @@
 <?php
 session_start();
+require("config/db__connect.php");
+require("functions/functions.php");
+
+$mess = "";
+
+/* Check Sign in */
+if (isset($_POST['loginSubmit'])) {
+  if (empty($_POST['username']) || empty($_POST['password'])) {
+    echo "<p class=\"mt-3 alert alert-danger\">Please input username or password!</p>";
+  } else if (!empty($_POST['username']) && !empty($_POST['password'])) {
+      $username = $_POST['username'];
+      $password = md5($_POST['password']);
+      if (count(select("config/db__connect.php", "SELECT * from users WHERE username = '$username' AND password = '$password'")) == 1) {
+        $_SESSION['user']['username'] = $username;
+      } else {
+        $mess = "<p class=\"mt-3 alert alert-danger\">Error!</p>";
+      }
+  }
+}
+/* Check Register */
+if (isset($_POST['registerSubmit'])) {
+  if (empty($_POST['username']) || empty($_POST['password'])) {
+    $mess = "<p class=\"mt-3 alert alert-danger\">Please input username or password!</p>";
+  } else if (!empty($_POST['username']) && !empty($_POST['password'])) {
+      $username = $_POST['username'];
+      if (count(select("config/db__connect.php", "SELECT username from users WHERE username = '$username'")) > 0) {
+        $mess = "<p class=\"mt-3 alert alert-danger\">Email or Username already exits!</p>";
+      } else {
+        $password = md5($_POST['password']);
+        if (insert("config/db__connect.php", "INSERT INTO users (username, password) VALUES ('$username', '$password')")) {
+          $mess = "<p class=\"mt-3 alert alert-success\">Username created!</p>";
+        } else {
+          $mess = "<p class=\"mt-3 alert alert-danger\">$conn->error</p>";
+        }
+      }
+  }
+}
+/* End check */
 
 if (!empty($_SESSION['user'])) {
   header('Location: index.php');
 } else if (empty($_SESSION['user'])) {
-
-  require("config/db__connect.php");
-  require("functions/functions.php");
 
   $currentPage = 2;
   require "layouts/header.php"
@@ -42,7 +77,7 @@ if (!empty($_SESSION['user'])) {
                     </div>
                     <div class="form-group">
                       <label for="password">Password</label>
-                      <input type="text" name="password" class="form-control">
+                      <input type="password" name="password" class="form-control">
                     </div>
                     <button type="submit" name="loginSubmit" class="btn btn-block btn-success">Sign in</button>
                   </form>
@@ -65,44 +100,11 @@ if (!empty($_SESSION['user'])) {
                 <!-- /Register -->
               </div>
             </div>
-            <!-- Check Sign in -->
             <?php
-            if (isset($_POST['loginSubmit'])) {
-              if (empty($_POST['username']) || empty($_POST['password'])) {
-                echo "<p class=\"mt-3 alert alert-danger\">Please input username or password!</p>";
-              } else if (!empty($_POST['username']) && !empty($_POST['password'])) {
-                  $username = $_POST['username'];
-                  $password = md5($_POST['password']);
-                  if (count(select("config/db__connect.php", "SELECT * from users WHERE username = '$username' AND password = '$password'")) == 1) {
-                    $_SESSION['user']['username'] = $username;
-                    header('Location: index.php');
-                  } else {
-                    echo "<p class=\"mt-3 alert alert-danger\">Error!</p>";
-                  }
-              }
+            if (!empty($mess)) {
+              echo $mess;
             }
             ?>
-            <!-- Check Register -->
-            <?php
-            if (isset($_POST['registerSubmit'])) {
-              if (empty($_POST['username']) || empty($_POST['password'])) {
-                echo "<p class=\"mt-3 alert alert-danger\">Please input username or password!</p>";
-              } else if (!empty($_POST['username']) && !empty($_POST['password'])) {
-                  $username = $_POST['username'];
-                  if (count(select("config/db__connect.php", "SELECT username from users WHERE username = '$username'")) > 0) {
-                    echo "<p class=\"mt-3 alert alert-danger\">Email or Username already exits!</p>";
-                  } else {
-                    $password = md5($_POST['password']);
-                    if (insert("config/db__connect.php", "INSERT INTO users (username, password) VALUES ('$username', '$password')")) {
-                      echo "<p class=\"mt-3 alert alert-success\">Username created!</p>";
-                    } else {
-                      echo "<p class=\"mt-3 alert alert-danger\">$conn->error</p>";
-                    }
-                  }
-              }
-            }
-            ?>
-            <!-- End check -->
           </div>
           <!-- /Sign in and register -->
         </div>
@@ -111,7 +113,7 @@ if (!empty($_SESSION['user'])) {
       <!-- /.container -->
     </section>
     <!-- /.container -->
-<?php 
+<?php
     require "layouts/footer.php";
 }
 ?>

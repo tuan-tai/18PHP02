@@ -59,11 +59,14 @@ require "layouts/header.php"
                 </h4>
                 <h5>".$product['price']."</h5>
                 <p class=\"card-text\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-              </div>
-              <div class=\"card-footer\">
-                <small class=\"text-muted\">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
-            </div>
+              </div>"
+              .(!empty($_SESSION['user'])
+              ? "<div class=\"card-footer\">
+                <a href=\"cart_add.php?id=".$product['id']."\">Add to cart</a>
+              </div>"
+              : ""
+              ).
+            "</div>
           </div>";
         }
         ?>

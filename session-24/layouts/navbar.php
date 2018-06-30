@@ -27,6 +27,7 @@
                 <img src=\"uploads/avatar.png\" width=\"20px\">
               </a>
               <div class=\"dropdown-menu dropdown-menu-right\">
+                <a class=\"dropdown-item\" href=\"cart_show.php\">My cart</a>
                 <a class=\"dropdown-item\" href=\"sign-out.php\">Sign out</a>
               </div>
             </div>
