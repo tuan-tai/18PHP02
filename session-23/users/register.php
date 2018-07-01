@@ -4,7 +4,7 @@
 	<p>Password:<input type="password" name="password"></p>
 	<p><input type="submit" name="register" value="Register"></p>
 </form>
-<?php 
+<?php
 include '../config/connectdb.php';
 if(isset($_POST['register'])){
 	$username = $_POST['username'];

@@ -25,6 +25,5 @@ if(isset($_POST['login'])){
 	}else{
 		echo "Wrong username or password";
 	}
-	
 }
 ?>
