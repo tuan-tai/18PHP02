@@ -20,6 +20,9 @@
   <!-- Custom styles for this template -->
   <link href="css/shop-homepage.css" rel="stylesheet">
 
+  <!-- Font awesome -->
+  <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+
   <!-- Icon-->
   <link rel="icon" href="uploads/favicon.png">
 </head>

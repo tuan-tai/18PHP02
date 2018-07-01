@@ -12,8 +12,10 @@ if (isset($_POST['loginSubmit'])) {
   } else if (!empty($_POST['username']) && !empty($_POST['password'])) {
       $username = $_POST['username'];
       $password = md5($_POST['password']);
-      if (count(select("config/db__connect.php", "SELECT * from users WHERE username = '$username' AND password = '$password'")) == 1) {
+      $userFind = select("config/db__connect.php", "SELECT * from users WHERE username = '$username' AND password = '$password'");
+      if (count($userFind) == 1) {
         $_SESSION['user']['username'] = $username;
+        $_SESSION['user']['role'] = $userFind[0]['role'];
       } else {
         $mess = "<p class=\"mt-3 alert alert-danger\">Error!</p>";
       }

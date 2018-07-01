@@ -6,3 +6,6 @@ $('.owl-carousel').owlCarousel({
     dots:false,
     items:1
 })
+$(document).ready(function () {
+
+});

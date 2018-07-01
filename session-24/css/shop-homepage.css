@@ -12,6 +12,44 @@ body {
   height: 350px;
 }
 
+/* Nav bar */
+
+.cart-icon-img {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  border-radius: 50%;
+}
+
+@media only screen and (max-width: 992px) {
+  .cart-icon-img {
+    top: 0;
+    transform: translateY(0);
+  }
+}
+
+/* Index */
+
+.btn-cart {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+/* Cart Show */
+
+.cart-show th,
+.cart-show td {
+  text-align: center;
+  vertical-align: middle;
+}
+  .cart-show td p {
+    margin-bottom: 0;
+  }
+
 /* Slide */
 
 .owl-carousel {
