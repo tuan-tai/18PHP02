@@ -13,9 +13,9 @@ if ( (!isset($_GET['category'])) || ($_GET['category'] == "all") ) {
 $slides = select('config/db__connect.php', 'SELECT * FROM products LIMIT 3');
 ?>
 
-  <?php
+<?php
 $currentPage = 1;
-require "layouts/header.php"
+require "layouts/header.php";
 ?>
 
     <!-- Page Content -->

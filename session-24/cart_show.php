@@ -76,7 +76,11 @@ $total = 0;
         </tfoot>
       </table>
     </div>
+    <div class="text-right">
+      <a href="cart_save.php" class="btn btn-primary">Add to database</a>
+    </div>
   </div>
+  <!-- /.container -->
 </section>
 <?php
 $conn->close();

@@ -10,7 +10,6 @@ function select($db, $sql)
             array_push($result1, $row);
         }
     }
-    $conn->close();
     return $result1;
 }
 
@@ -18,10 +17,9 @@ function insert($db, $sql)
 {
     require $db;
     if ($conn->query($sql) === TRUE) {
-        return "New record created successfully";
+        return $conn->insert_id;
     } else {
         return "Error: " . $sql . "<br>" . $conn->error;
     }
-    $conn->close();
 }
 ?>
