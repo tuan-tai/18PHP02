@@ -83,15 +83,14 @@ require "layouts/promotion.php";
 <!-- /.container -->
 <?php require "layouts/footer.php"; ?>
 <script>
-  $(".form-cart-add").on('submit', function (e) {
-    e.preventDefault();
-
+  $(".form-cart-add").on('submit', function (event) {
+    event.preventDefault();
     $.ajax({
       type: 'get',
       url: 'cart_add.php',
       data: $(this).serialize()
-    }).done(function () {
-      $(".cart-icon-img").attr("data-after", "<?php echo count($_SESSION['cart']); ?>");
+    }).done(function (result) {
+      $(".cart-icon-img").attr("data-after", result);
     });
   });
 </script>
