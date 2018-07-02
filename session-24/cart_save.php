@@ -12,6 +12,6 @@ if ( empty($_SESSION['user']['username']) || empty($_SESSION['cart']) ) {
         $price = select("config/db__connect.php", "SELECT price FROM products WHERE id = ".$product_id."")[0]['price'];
         insert("config/db__connect.php", "INSERT INTO order_detail (order_id, product_id, quantity, price) VALUES (".$order_id.", ".$product_id.", ".$quantity.", ".(int)$price.")");
     }
-    header("Location: cart_show.php");
+    header("Location: cart_show.php?message=1");
 }
 ?>

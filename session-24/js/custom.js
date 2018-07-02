@@ -7,5 +7,4 @@ $('.owl-carousel').owlCarousel({
     items:1
 })
 $(document).ready(function () {
-
 });

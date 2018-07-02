@@ -11,7 +11,6 @@
     } else {
         $_SESSION['cart'][$id] = $quantity;
     }
-    header("Location: index.php");
   } else {
     header("Location: index.php?mess=You are not logged in. Please try again.");
   }

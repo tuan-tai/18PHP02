@@ -28,6 +28,13 @@ $total = 0;
         </thead>
         <tbody>
         <?php
+        if (empty($_SESSION['cart'])) {
+        ?>
+          <tr>
+            <td colspan="8" class="alert alert-danger">No product</td>
+          </tr>
+        <?php
+        } else {
         $i = 1;
         foreach ($_SESSION['cart'] as $id => $quantity) {
           $product = select("config/db__connect.php", "SELECT products.id, products.image, products.name, categories.name AS cat_name, products.price FROM products INNER JOIN categories ON products.category_id = categories.id WHERE products.id = $id");
@@ -46,11 +53,13 @@ $total = 0;
             <?php echo number_format($product[0]['price'], 0,"", "."); ?>
           </td>
           <td class="productQuantity">
-            <a href="cart_change.php?action=-&id=<?php echo $product[0]['id']; ?>" class="btn btn-primary">-</a>
-            <p class="btn">
-            <?php echo $quantity ?>
-            </p>
-            <a href="cart_change.php?action=+&id=<?php echo $product[0]['id']; ?>" class="btn btn-primary">+</a>
+            <div class="d-flex">
+              <a href="cart_change.php?action=-&id=<?php echo $product[0]['id']; ?>" class="btn btn-primary">-</a>
+              <p class="btn">
+              <?php echo $quantity ?>
+              </p>
+              <a href="cart_change.php?action=+&id=<?php echo $product[0]['id']; ?>" class="btn btn-primary">+</a>
+            </div>
           </td>
           <td class="productTotal"><?php $total = $total +  $product[0]['price'] * $quantity; echo number_format($product[0]['price'] * $quantity, 0, "", "."); ?></td>
           <td>
@@ -73,7 +82,18 @@ $total = 0;
             <th><?php echo number_format($total, 0, "", "."); ?></th>
             <th></th>
           </tr>
+          <?php
+          if (($_GET['message']) == 1) {
+          echo
+            "<tr>
+              <th colspan=\"8\" class=\"alert alert-success\">Successfully added to databse!</th>
+            </tr>";
+          }
+          ?>
         </tfoot>
+        <?php
+        }
+        ?>
       </table>
     </div>
     <div class="text-right">
