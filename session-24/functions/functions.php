@@ -22,4 +22,12 @@ function insert($db, $sql)
         return "Error: " . $sql . "<br>" . $conn->error;
     }
 }
+
+function isAdmin() {
+    if (!empty($_SESSION['user'])) {
+        return true;
+    } else {
+        return false;
+    }
+}
 ?>

@@ -31,7 +31,7 @@ session_start();
               </a>
               <div class=\"mb-3 dropdown-menu dropdown-menu-right\">
                 <a class=\"dropdown-item\" href=\"\" style=\"border-bottom: 1px solid lightgray\">".$_SESSION['user']['username']."</a>
-                ".($_SESSION['user']['role'] == 1 ? "<a class=\"dropdown-item\" href=\"cart_show.php\">Admin page</a>" : "")."
+                ".($_SESSION['user']['role'] == 1 ? "<a class=\"dropdown-item\" href=\"admin/index.php\">Admin page</a>" : "")."
                 <a class=\"dropdown-item\" href=\"cart_show.php\">My cart</a>
                 <a class=\"dropdown-item\" href=\"sign-out.php\">Sign out</a>
               </div>

@@ -12,6 +12,7 @@
         $_SESSION['cart'][$id] = $quantity;
     }
     echo count($_SESSION['cart']);
+    die();
   } else {
     header("Location: index.php?mess=You are not logged in. Please try again.");
   }

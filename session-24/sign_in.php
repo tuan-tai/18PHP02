@@ -17,6 +17,9 @@ if (isset($_POST['loginSubmit'])) {
         $_SESSION['user']['username'] = $username;
         $_SESSION['user']['id'] = $userFind[0]['id'];
         $_SESSION['user']['role'] = $userFind[0]['role'];
+        if ($userFind[0]['role'] == 1) {
+          header("location: admin/index.php");
+        }
       } else {
         $mess = "<p class=\"mt-3 alert alert-danger\">Error!</p>";
       }
