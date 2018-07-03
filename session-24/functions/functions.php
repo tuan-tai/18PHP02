@@ -23,8 +23,18 @@ function insert($db, $sql)
     }
 }
 
+function delete($db, $sql)
+{
+    require $db;
+    if ($conn->query($sql) === TRUE) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 function isAdmin() {
-    if (!empty($_SESSION['user'])) {
+    if ($_SESSION['user']['role'] == 1) {
         return true;
     } else {
         return false;
