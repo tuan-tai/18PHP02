@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $(".catAdd").click(function (e) {
+    $(".catAdd").click(function(e) {
         e.preventDefault();
         $(this).hide();
         $(this).parent().append(
@@ -8,5 +8,15 @@ $(document).ready(function() {
                 <input type="submit" class="btn btn-primary"/>
             </form>`
         );
-    })
+    });
+    $(".catEdit").click(function(e) {
+        e.preventDefault();
+        var oldValue = $(this).parent().siblings(".catName").html();
+        $(this).parent().siblings(".catName").html(`
+            <form method="post" action="cat_edit.php">
+                <input type="text" value="`+oldValue+`"/>
+                <input type="submit" value="Edit" class="btn btn-primary"/>
+            </form>
+        `);
+    });
 });
