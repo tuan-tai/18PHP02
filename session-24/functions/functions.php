@@ -22,7 +22,15 @@ function insert($db, $sql)
         return "Error: " . $sql . "<br>" . $conn->error;
     }
 }
-
+function update($db, $sql)
+{
+    require $db;
+    if ($conn->query($sql) === TRUE) {
+        return true;
+    } else {
+        return false;
+    }
+}
 function delete($db, $sql)
 {
     require $db;

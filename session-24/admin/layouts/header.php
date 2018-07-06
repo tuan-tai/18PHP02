@@ -48,27 +48,13 @@ require "head.php";
             <!-- Add icons to the links using the .nav-icon class
               with font-awesome or any other icon font library -->
             <li class="nav-item has-treeview menu-open">
-              <a href="#" class="nav-link active">
+              <a href="index.php" class="nav-link active">
                 <i class="nav-icon fa fa-dashboard"></i>
                 <p>
                   Categories
                   <i class="right fa fa-angle-left"></i>
                 </p>
               </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="./index.html" class="nav-link active">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>List</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="./index2.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Add</p>
-                  </a>
-                </li>
-              </ul>
             </li>
           </ul>
         </nav>

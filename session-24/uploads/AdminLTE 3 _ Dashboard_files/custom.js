@@ -12,12 +12,10 @@ $(document).ready(function() {
     $(".catEdit").click(function(e) {
         e.preventDefault();
         var oldValue = $(this).parent().siblings(".catName").html();
-        var id = $(this).parent().siblings("td").children(".catID").html();
         $(".catEdit").hide();
         $(this).parent().siblings(".catName").html(`
             <form method="post" action="cat_edit.php">
-                <input type="text" name="name" value="` + oldValue + `"/>
-                <input type="hidden" name="id" value="` + id + `"/>
+                <input type="text" value="`+oldValue+`"/>
                 <input type="submit" value="Edit" class="btn btn-primary"/>
             </form>
         `);

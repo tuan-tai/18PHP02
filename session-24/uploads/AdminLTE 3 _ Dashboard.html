@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)http://dev.18php02.com/session-24/admin/index.php# -->
+<html style="height: auto;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AdminLTE 3 | Dashboard</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="./AdminLTE 3 _ Dashboard_files/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="./AdminLTE 3 _ Dashboard_files/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="./AdminLTE 3 _ Dashboard_files/adminlte.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="./AdminLTE 3 _ Dashboard_files/blue.css">
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="./AdminLTE 3 _ Dashboard_files/datepicker3.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="./AdminLTE 3 _ Dashboard_files/daterangepicker-bs3.css">
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link rel="stylesheet" href="./AdminLTE 3 _ Dashboard_files/bootstrap3-wysihtml5.min.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="./AdminLTE 3 _ Dashboard_files/css" rel="stylesheet">
+  </head>
+<body class="sidebar-mini" style="height: auto;">
+  <div class="wrapper">
+
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" data-widget="pushmenu" href="http://dev.18php02.com/session-24/admin/index.php#">
+            <i class="fa fa-bars"></i>
+          </a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="http://dev.18php02.com/session-24/index.php" class="nav-link">Home</a>
+        </li>
+      </ul>
+    </nav>
+    <!-- /.navbar -->
+
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4" style="min-height: 599px;">
+      <!-- Brand Logo -->
+      <a href="http://dev.18php02.com/session-24/admin/index3.html" class="brand-link">
+        <img src="./AdminLTE 3 _ Dashboard_files/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-light">AdminLTE 3</span>
+      </a>
+
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+          <div class="image">
+            <img src="./AdminLTE 3 _ Dashboard_files/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          </div>
+          <div class="info">
+            <a href="http://dev.18php02.com/session-24/admin/index.php#" class="d-block">
+              tuantai568@gmail.com            </a>
+          </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <!-- Add icons to the links using the .nav-icon class
+              with font-awesome or any other icon font library -->
+            <li class="nav-item has-treeview menu-open">
+              <a href="http://dev.18php02.com/session-24/admin/index.php#" class="nav-link active">
+                <i class="nav-icon fa fa-dashboard"></i>
+                <p>
+                  Categories
+                  <i class="right fa fa-angle-left"></i>
+                </p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+      </div>
+      <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper" style="min-height: 599px;">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0 text-dark">Dashboard</h1>
+            </div>
+            <!-- /.col -->
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item">
+                  <a href="http://dev.18php02.com/session-24/admin/index.php#">Home</a>
+                </li>
+                <li class="breadcrumb-item active">Dashboard v2</li>
+              </ol>
+            </div>
+            <!-- /.col -->
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+      </div>
+      <!-- /.content-header -->
+<!-- Main content -->
+<section class="content">
+  <div class="row">
+    <div class="col-12">
+  <div class="card">
+    <div class="card-header d-flex align-items-center catTitle">
+      <h3 class="card-title">Categories List</h3>
+      <a href="http://dev.18php02.com/session-24/admin/cat_add.php" class="ml-auto btn btn-primary catAdd"><i class="mr-1 fa fa-cart-plus" aria-hidden="true"></i>Add</a>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th rowspan="2" class="text-center" style="width: 10%;">#</th>
+            <th rowspan="2" class="text-center">Name</th>
+            <th colspan="2" class="text-center" style="width: 20%;">Action</th>
+          </tr>
+          <tr>
+            <th class="text-center">Edit</th>
+            <th class="text-center">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+        
+          <tr>
+            <td>1</td>
+            <td class="catName">Apple</td>
+            <td><a href="http://dev.18php02.com/session-24/admin/cat_edit.php?id=1" class="catEdit"><i class="mr-1 fa fa-pencil-square-o" aria-hidden="true"></i>Edit</a></td>
+            <td><a href="http://dev.18php02.com/session-24/admin/cat_delete.php?id=1"><i class="mr-1 fa fa-trash-o" aria-hidden="true"></i>
+            Delete</a></td>
+          </tr>
+          
+          <tr>
+            <td>2</td>
+            <td class="catName">Assus</td>
+            <td><a href="http://dev.18php02.com/session-24/admin/cat_edit.php?id=2" class="catEdit"><i class="mr-1 fa fa-pencil-square-o" aria-hidden="true"></i>Edit</a></td>
+            <td><a href="http://dev.18php02.com/session-24/admin/cat_delete.php?id=2"><i class="mr-1 fa fa-trash-o" aria-hidden="true"></i>
+            Delete</a></td>
+          </tr>
+          
+          <tr>
+            <td>3</td>
+            <td class="catName">Dell</td>
+            <td><a href="http://dev.18php02.com/session-24/admin/cat_edit.php?id=3" class="catEdit"><i class="mr-1 fa fa-pencil-square-o" aria-hidden="true"></i>Edit</a></td>
+            <td><a href="http://dev.18php02.com/session-24/admin/cat_delete.php?id=3"><i class="mr-1 fa fa-trash-o" aria-hidden="true"></i>
+            Delete</a></td>
+          </tr>
+          
+          <tr>
+            <td>4</td>
+            <td class="catName">Samsung</td>
+            <td><a href="http://dev.18php02.com/session-24/admin/cat_edit.php?id=4" class="catEdit"><i class="mr-1 fa fa-pencil-square-o" aria-hidden="true"></i>Edit</a></td>
+            <td><a href="http://dev.18php02.com/session-24/admin/cat_delete.php?id=4"><i class="mr-1 fa fa-trash-o" aria-hidden="true"></i>
+            Delete</a></td>
+          </tr>
+                  </tbody>
+      </table>
+    </div>
+    <!-- /.card-body -->
+  </div>
+  <!-- /.card -->
+  </div>
+</div></section>
+<!-- /.content -->
+</div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <strong>Copyright © 2014-2018
+      <a href="http://adminlte.io/">AdminLTE.io</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 3.0.0-alpha
+    </div>
+  </footer>
+
+</div>
+<!-- ./wrapper -->
+<!-- jQuery -->
+<script src="./AdminLTE 3 _ Dashboard_files/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="./AdminLTE 3 _ Dashboard_files/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button)
+</script>
+<!-- Bootstrap 4 -->
+<script src="./AdminLTE 3 _ Dashboard_files/bootstrap.bundle.min.js"></script>
+<!-- jQuery Knob Chart -->
+<script src="./AdminLTE 3 _ Dashboard_files/jquery.knob.js"></script>
+<!-- daterangepicker -->
+<script src="./AdminLTE 3 _ Dashboard_files/moment.min.js"></script>
+<script src="./AdminLTE 3 _ Dashboard_files/daterangepicker.js"></script>
+<!-- datepicker -->
+<script src="./AdminLTE 3 _ Dashboard_files/bootstrap-datepicker.js"></script>
+<!-- Bootstrap WYSIHTML5 -->
+<script src="./AdminLTE 3 _ Dashboard_files/bootstrap3-wysihtml5.all.min.js"></script>
+<!-- Slimscroll -->
+<script src="./AdminLTE 3 _ Dashboard_files/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="./AdminLTE 3 _ Dashboard_files/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="./AdminLTE 3 _ Dashboard_files/adminlte.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="./AdminLTE 3 _ Dashboard_files/dashboard.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="./AdminLTE 3 _ Dashboard_files/demo.js"></script>
+<!-- Custom -->
+<script src="./AdminLTE 3 _ Dashboard_files/custom.js"></script>
+
+
+
+</body></html>

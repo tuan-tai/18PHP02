@@ -26,7 +26,7 @@
           $i++;
           echo "
           <tr>
-            <td>".$i."</td>
+            <td>".$i."<span class=\"catID d-none\">".$category['id']."</span></td>
             <td class=\"catName\">".$category['name']."</td>
             <td><a href=\"cat_edit.php?id=".$category['id']."\" class=\"catEdit\"><i class=\"mr-1 fa fa-pencil-square-o\" aria-hidden=\"true\"></i>Edit</a></td>
             <td><a href=\"cat_delete.php?id=".$category['id']."\"><i class=\"mr-1 fa fa-trash-o\" aria-hidden=\"true\"></i>
