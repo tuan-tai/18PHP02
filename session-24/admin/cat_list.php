@@ -1,4 +1,14 @@
-<div class="col-12">
+<?php
+  session_start();
+  require "../functions/functions.php";
+  require "../config/db__connect.php";
+  $currentActive = 1;
+  require "layouts/header.php";
+?>
+<!-- Main content -->
+<section class="content">
+  <div class="row">
+  <div class="col-12">
   <div class="card">
     <div class="card-header d-flex align-items-center catTitle">
       <h3 class="card-title">Categories List</h3>
@@ -41,3 +51,10 @@
     <!-- /.card-body -->
   </div>
   <!-- /.card -->
+
+  </div>
+</section>
+<!-- /.content -->
+<?php
+require "layouts/footer.php";
+?>
