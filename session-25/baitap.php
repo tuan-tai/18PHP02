@@ -39,8 +39,6 @@ echo "<br>";
 $human = new Human();
 $human->register();
 echo "<br>";
-$human->getID();
-echo "<br>";
 $human->callPrivateGetID();
 echo "<br>";
 
