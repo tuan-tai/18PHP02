@@ -1,4 +1,4 @@
-<?php 
+<?php
 	include 'controller.php';
 	$controller = new ExController();
 	$controller->handleRequest();

@@ -1,4 +1,4 @@
-<?php 
+<?php
 class ExModel{
 	function getHome(){
 		return  "Lay thong tin trang chu tu database va tra ve cho model <br/>";

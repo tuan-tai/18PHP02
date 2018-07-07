@@ -1,4 +1,4 @@
-<?php 
+<?php
 include 'model.php';
 class ExController{
 	function handleRequest(){
