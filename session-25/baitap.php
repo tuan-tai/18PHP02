@@ -22,7 +22,7 @@ class Human
         echo "Human get ID";
     }
     public function callPrivateGetID() {
-        echo "Human call private function getID";
+        echo $this->getID();
     }
 }
 
