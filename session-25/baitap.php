@@ -33,13 +33,18 @@ class Student extends Human
         echo "Student eats.";
     }
 }
+
 echo "<strong>Human</strong>";
 echo "<br>";
 $human = new Human();
 $human->register();
 echo "<br>";
+$human->getID();
+echo "<br>";
 $human->callPrivateGetID();
 echo "<br>";
+
+
 echo "<strong>Student</strong>";
 echo "<br>";
 $student = new Student();
@@ -49,4 +54,5 @@ $student->work();
 echo "<br>";
 $student->callPrivateGetID();
 echo "<br>";
+
 ?>
