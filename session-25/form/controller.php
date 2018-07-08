@@ -15,6 +15,7 @@ class Controller
                echo "<p style=\"color: red;\">Please insert Username or Password</p>";
             }
         }
+        include './view.php';
     }
 }
 
