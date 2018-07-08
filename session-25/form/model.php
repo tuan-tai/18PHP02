@@ -19,9 +19,9 @@ class Model
             $stmt->bindParam(1, $username);
             $stmt->bindParam(2, $password);
             $stmt->execute();
-            return 'Register succeed!';
+            return "<p style=\"color: green\">Register succeed!</p>";
         } catch (PDOException $e) {
-            echo 'Error: '.$e->getMessage();
+            echo '<p class=\"color: red\">Error: '.$e->getMessage()."</p>";
         }
     }
 }

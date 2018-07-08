@@ -11,8 +11,10 @@ class Controller
                 $model = new Model();
                 $register = $model->register($_POST['username'], md5($_POST['password']));
                 include 'view.php';
+            } else {
+               echo "<p style=\"color: red;\">Please insert Username or Password</p>";
             }
-        };
+        }
     }
 }
 
