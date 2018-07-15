@@ -7,8 +7,12 @@ class FrontEnd {
 
 	public function __construct()
 	{
-		$this->controller = $_GET[ 'controller' ];
-		$this->action = $_GET[ 'action' ];
+		if ( isset( $_GET[ 'controller' ] ) ) {
+			$this->controller = $_GET[ 'controller' ];
+		}
+		if ( isset( $_GET[ 'action' ] ) ) {
+			$this->action = $_GET[ 'action' ];
+		}
 	}
 
 	/**
