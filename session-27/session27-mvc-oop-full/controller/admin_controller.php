@@ -54,7 +54,7 @@ class AdminController{
 				exit();
 			}
 		} else {
-			echo "Please login";
+			header('location: admin.php');
 		}	
 	}
 	// ham nay de redirect trang
