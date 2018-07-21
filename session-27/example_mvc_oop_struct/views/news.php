@@ -4,7 +4,6 @@ if ( !empty($titles) ) {
     <ol>
         <?php
         foreach ($titles as $title) {
-            var_dump($title['title']);
             echo "<li>" . $title['title'] . "</li>";
         }
         ?>
